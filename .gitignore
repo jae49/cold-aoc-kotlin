@@ -1,0 +1,32 @@
+# Ignore Gradle GUI config
+**/gradle-app.setting
+
+# Cache of project
+**/.gradletasknamecache
+
+# Keep gradle temporary files out of repo
+**/.gradle
+
+# Keep generated binaries out of repo
+**/bin
+**/obj
+**/build
+**/out
+
+# Ignore Intellij IDEA project files
+# Generate as needed, but keep out of repo
+**/.idea
+**/*.iml
+**/*.iws
+**/*.ipr
+
+# Ignore tomcat runtime files
+**/tomcat.*
+
+# Ignore log files
+**/*.log
+
+# Ignore input files from Advent of Code
+**/input.txt
+
+
