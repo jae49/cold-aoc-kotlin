@@ -16,7 +16,7 @@ class SolveToolsTests {
 
     @Test
     fun check_getTotal() {
-        assertEquals(296, SolveTools.totalFLNumberStringsInFile("/day01/testinput01.txt"))
+        assertEquals(296, SolveTools.totalFLNumberStringsInFile("/data/2023/day01/testinput01.txt"))
     }
 
     @Test

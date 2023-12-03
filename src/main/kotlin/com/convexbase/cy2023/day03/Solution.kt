@@ -5,7 +5,7 @@ class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val lines = Solution::class.java.getResource("/data/day03/input.txt").readText().lines()
+            val lines = Solution::class.java.getResource("/data/2023/day03/input.txt").readText().lines()
             val schematicLines = SolveTools.getSchematicLines(lines)
             val partNumbers = SolveTools.findPartNumbersNearSymbols(schematicLines)
             val partNumbersSum = partNumbers.sumOf { it.partNo }

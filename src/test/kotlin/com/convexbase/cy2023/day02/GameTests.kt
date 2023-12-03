@@ -7,7 +7,7 @@ class GameTests {
 
     @Test
     fun testGameMaxGrabAndCube() {
-        val gameText = SolveToolsTests::class.java.getResource("/day02/testinput01.txt").readText()
+        val gameText = SolveToolsTests::class.java.getResource("/data/2023/day02/testinput01.txt").readText()
         val games = SolveTools.loadGames(gameText)
         assertEquals(5, games.size)
 

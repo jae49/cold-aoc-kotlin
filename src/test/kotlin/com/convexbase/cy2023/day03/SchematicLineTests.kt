@@ -9,7 +9,7 @@ class SchematicLineTests {
 
     @Test
     fun testToSchematicLine() {
-        val schematicLines = SolveToolsTests::class.java.getResource("/day03/testinput01.txt").readText().lines()
+        val schematicLines = SolveToolsTests::class.java.getResource("/data/2023/day03/testinput01.txt").readText().lines()
         assertEquals(10, schematicLines.size)
         expectSchematicLine(0, schematicLines[0], 0, 2)
         expectSchematicLine(1, schematicLines[1], 1, 0)

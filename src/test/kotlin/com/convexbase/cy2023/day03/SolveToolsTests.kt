@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class SolveToolsTests {
     @Test
     fun testFindPartNumbersNearSymbols() {
-        val lines = SolveToolsTests::class.java.getResource("/day03/testinput01.txt").readText().lines()
+        val lines = SolveToolsTests::class.java.getResource("/data/2023/day03/testinput01.txt").readText().lines()
         val schematicLines = SolveTools.getSchematicLines(lines)
         assertEquals(10, schematicLines.size)
         val partsNearSymbols = SolveTools.findPartNumbersNearSymbols(schematicLines)
@@ -17,7 +17,7 @@ class SolveToolsTests {
 
     @Test
     fun testGetGearsNearTwoPartNumbers() {
-        val lines = SolveToolsTests::class.java.getResource("/day03/testinput01.txt").readText().lines()
+        val lines = SolveToolsTests::class.java.getResource("/data/2023/day03/testinput01.txt").readText().lines()
         val schematicLines = SolveTools.getSchematicLines(lines)
         assertEquals(10, schematicLines.size)
         val matchingGears = SolveTools.getGearsNearTwoPartNumbers(schematicLines)

@@ -7,7 +7,7 @@ class SolveToolsTests {
 
     @Test
     fun testGameLoad() {
-        val gameText = SolveToolsTests::class.java.getResource("/day02/testinput01.txt").readText()
+        val gameText = SolveToolsTests::class.java.getResource("/data/2023/day02/testinput01.txt").readText()
         val games = SolveTools.loadGames(gameText)
         assertEquals(5, games.size)
         // check game 0
@@ -48,7 +48,7 @@ class SolveToolsTests {
 
     @Test
     fun testPossibleGames() {
-        val gameText = SolveToolsTests::class.java.getResource("/day02/testinput01.txt").readText()
+        val gameText = SolveToolsTests::class.java.getResource("/data/2023/day02/testinput01.txt").readText()
         val games = SolveTools.loadGames(gameText)
         assertEquals(5, games.size)
         val possibleGames = SolveTools.possibleGamesWithMaxColors(

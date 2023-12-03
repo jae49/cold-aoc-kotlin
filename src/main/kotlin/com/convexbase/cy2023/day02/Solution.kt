@@ -5,7 +5,7 @@ class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val gameText = Solution::class.java.getResource("/data/day02/input.txt").readText()
+            val gameText = Solution::class.java.getResource("/data/2023/day02/input.txt").readText()
             val games = SolveTools.loadGames(gameText)
 
 
