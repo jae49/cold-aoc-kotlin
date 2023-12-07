@@ -48,14 +48,13 @@ data class PuzzleData(
     inline fun seedLocation(seed: Long) = humidityToLocation[temperatureToHumidity[lightToTemperature[
         waterToLight[fertilizerToWater[soilToFertilizer[seedToSoil[seed]]]]]]]
     fun lowestRangeSeedLocation():Long {
-        var minSeed = Long.MAX_VALUE
-        for (range in seedRanges) {
-            for (seed in range) {
-                val location = seedLocation(seed)
-                if (location < minSeed) minSeed = location
-            }
-        }
-        return minSeed
+        val minSeed = seedRanges
+            .asSequence()
+            .flatten()
+            .map { seed -> seedLocation(seed) }
+            .minOrNull()
+
+        return minSeed ?: Long.MAX_VALUE
     }
 
 
