@@ -2,10 +2,13 @@ package com.convexbase.cy2024.day01
 
 import com.convexbase.CoreUtils
 
+typealias IntListPair = Pair<List<Int>, List<Int>>
+typealias IntList = List<Int>
+
 class SolutionTools {
 
     companion object {
-        fun getNumberLines(lines:List<String>):Pair<List<Int>, List<Int>> {
+        fun getNumberLines(lines:List<String>):IntListPair {
             val leftLines = mutableListOf<Int>()
             val rightLines = mutableListOf<Int>()
             for (line in lines) {
@@ -16,7 +19,7 @@ class SolutionTools {
             return Pair(leftLines, rightLines)
         }
 
-        fun sortAndGetLineDifferences(twoLines: Pair<List<Int>, List<Int>>): List<Int> {
+        fun sortAndGetLineDifferences(twoLines: IntListPair):IntList {
             val (leftLines, rightLines) = twoLines
             check (leftLines.size == rightLines.size)
             val differences = mutableListOf<Int>()
@@ -29,7 +32,7 @@ class SolutionTools {
             return differences
         }
 
-        fun computeSimilarityList(twoLines: Pair<List<Int>, List<Int>>): List<Int> {
+        fun computeSimilarityList(twoLines: IntListPair):IntList {
             val (leftLines, rightLines) = twoLines
             val mapCount = mutableMapOf<Int,Int>()
             for (num in rightLines) {
