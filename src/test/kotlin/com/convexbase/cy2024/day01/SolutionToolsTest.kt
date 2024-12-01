@@ -1,13 +1,14 @@
 package com.convexbase.cy2024.day01
 
 import kotlin.test.*
+import com.convexbase.CoreUtils
 
 
 class SolutionToolsTest {
 
     @Test
     fun checkLinesAndDifferences() {
-        val lines = SolutionTools.getLines("/data/2024/day01/testinput.txt")
+        val lines = CoreUtils.readLinesFromResource("/data/2024/day01/testinput.txt")
         val twoLines = SolutionTools.getNumberLines(lines)
         val differences = SolutionTools.sortAndGetLineDifferences(twoLines)
         assertEquals(2, differences[0])
@@ -16,7 +17,7 @@ class SolutionToolsTest {
 
     @Test
     fun checkSimilarityLines() {
-        val lines = SolutionTools.getLines("/data/2024/day01/testinput.txt")
+        val lines = CoreUtils.readLinesFromResource("/data/2024/day01/testinput.txt")
         val twoLines = SolutionTools.getNumberLines(lines)
         val similarityLines = SolutionTools.computeSimilarityList(twoLines)
         assertEquals(6, similarityLines.size)

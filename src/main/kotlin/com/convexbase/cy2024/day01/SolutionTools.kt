@@ -1,24 +1,17 @@
 package com.convexbase.cy2024.day01
 
+import com.convexbase.CoreUtils
+
 class SolutionTools {
 
     companion object {
-        fun getLines(resource:String):List<String> {
-            return SolutionTools::class.java.getResourceAsStream("$resource").bufferedReader()
-                .readLines()
-                .filter { it.isNotBlank() }
-        }
-
         fun getNumberLines(lines:List<String>):Pair<List<Int>, List<Int>> {
             val leftLines = mutableListOf<Int>()
             val rightLines = mutableListOf<Int>()
             for (line in lines) {
-                val parts = line.trim().split("   ")
-                check (parts.size == 2)
-                val left = parts[0].toInt()
-                val right = parts[1].toInt()
-                leftLines.add(left)
-                rightLines.add(right)
+                val (left, right) = CoreUtils.getLineLongs(line, 2)
+                leftLines.add(left.toInt())
+                rightLines.add(right.toInt())
             }
             return Pair(leftLines, rightLines)
         }
