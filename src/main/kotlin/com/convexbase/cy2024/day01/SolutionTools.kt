@@ -1,6 +1,7 @@
 package com.convexbase.cy2024.day01
 
 import com.convexbase.CoreUtils
+import kotlin.math.abs
 
 typealias IntListPair = Pair<List<Int>, List<Int>>
 typealias IntList = List<Int>
@@ -26,7 +27,7 @@ class SolutionTools {
             val leftSortedLines = leftLines.sorted()
             val rightSortedLines = rightLines.sorted()
             for (i in leftSortedLines.indices) {
-                val difference = Math.abs(leftSortedLines[i] - rightSortedLines[i]).toInt()
+                val difference = abs(leftSortedLines[i] - rightSortedLines[i])
                 differences.add(difference)
             }
             return differences
