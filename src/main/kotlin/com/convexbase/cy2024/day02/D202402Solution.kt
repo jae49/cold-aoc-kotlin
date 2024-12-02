@@ -12,7 +12,7 @@ class D202402Solution {
 
         fun getPart2Answer():Long {
             val lines = CoreUtils.readLinesFromResource("/data/2024/day02/input.txt")
-            return 0L
+            return SolutionTools.checkedDampedLevels(lines)
         }
 
 

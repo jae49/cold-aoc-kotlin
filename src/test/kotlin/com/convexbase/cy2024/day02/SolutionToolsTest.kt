@@ -9,5 +9,7 @@ class SolutionToolsTest {
         val lines = CoreUtils.readLinesFromResource("/data/2024/day02/testinput.txt")
         val safelines = SolutionTools.checkLevels(lines)
         assertEquals(2, safelines)
+        val dampedSafeLines = SolutionTools.checkedDampedLevels(lines)
+        assertEquals(4, dampedSafeLines)
     }
 }
