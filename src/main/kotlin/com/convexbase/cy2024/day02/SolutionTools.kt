@@ -34,12 +34,25 @@ class SolutionTools {
             return Pair(lastLevelType, levels.size-1)
         }
 
+        fun levelsSafety2(levels: List<Long>):Pair<LevelType, Int> {
+            var lastLevelType = checkLevel(levels[0], levels[1])
+            if (lastLevelType == LevelType.UNSAFE) return Pair(LevelType.UNSAFE, 1)
+            var element = 1
+            levels.drop(1).zipWithNext { a, b ->
+                element++
+                val levelType = checkLevel(a,b)
+                if (levelType != lastLevelType) return Pair(LevelType.UNSAFE, element)
+                lastLevelType = levelType
+            }
+            return Pair(lastLevelType, element)
+        }
+
         fun checkLevels(lines: List<String>):Long {
             var safelines = 0L
             var unsafelines = 0L
             for (line in lines) {
                 val levels = CoreUtils.getLineLongs(line)
-                val (lastLevelType, _) = levelsSafety(levels)
+                val (lastLevelType, _) = levelsSafety2(levels)
                 if (lastLevelType != LevelType.UNSAFE) safelines++
                 else unsafelines++
             }
@@ -53,7 +66,7 @@ class SolutionTools {
             var lineno = 1
             for (line in lines) {
                 val levels = CoreUtils.getLineLongs(line)
-                val (lastLevelType, index) = levelsSafety(levels)
+                val (lastLevelType, index) = levelsSafety2(levels)
                 if (lastLevelType != LevelType.UNSAFE) safelines++
                 else {
                     var saved = false
@@ -70,18 +83,18 @@ class SolutionTools {
                         val variant3 = mutableListOf<Long>().apply {
                             addAll(levels.subList(1, levels.size))
                         }
-                        val (variant3LevelType, _) = levelsSafety(variant3)
+                        val (variant3LevelType, _) = levelsSafety2(variant3)
                         if (variant3LevelType != LevelType.UNSAFE) {
                             print("; Safely removed element 0 = ${levels[0]}")
                             saved = true
                         }
                     }
-                    val (variant1LevelType, _) = levelsSafety(variant1)
+                    val (variant1LevelType, _) = levelsSafety2(variant1)
                     if (variant1LevelType != LevelType.UNSAFE) {
                         print("; Safely removed element $index = ${levels[index]}")
                         saved = true
                     }
-                    val (variant2LevelType, _) = levelsSafety(variant2)
+                    val (variant2LevelType, _) = levelsSafety2(variant2)
                     if (variant2LevelType != LevelType.UNSAFE) {
                         print("; Safely removed element ${index-1} = ${levels[index - 1]}")
                         saved = true
