@@ -29,6 +29,10 @@ object CoreUtils {
     }
 
 
+    fun readLineFromResource(resource: String): String =
+        CoreUtils::class.java.getResourceAsStream(resource).bufferedReader().readText()
+
+
     fun readLinesFromResource(resource:String): List<String> =
         CoreUtils::class.java.getResourceAsStream(resource).bufferedReader().readLines().filter(String::isNotBlank)
 
