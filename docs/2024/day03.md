@@ -1,4 +1,4 @@
-# AOC 2024 - Day 02
+# AOC 2024 - Day 03
 
 ## --- Day 3: Mull It Over ---
 
