@@ -32,6 +32,16 @@ dependencies {
     // Add Kotlin gradle plugin for dependency export
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
 
+    // Add Kotlin Notebook AoC library
+    implementation("com.toldoven.aoc:aoc-kotlin-notebook:1.1.2")
+    //implementation("io.ktor:ktor-client-core:2.3.13")
+    //implementation("io.ktor:ktor-client-core-jvm:3.0.2")
+
+    // Add Arrow library
+    implementation(platform("io.arrow-kt:arrow-stack:1.2.4"))
+    implementation("io.arrow-kt:arrow-core")
+    implementation("io.arrow-kt:arrow-fx-coroutines")
+
     // Bouncy Castle (crypto library) dependencies
     implementation("org.bouncycastle:bcprov-jdk18on:1.79")
 
